@@ -10,30 +10,60 @@
   color: white;
 }
 
+.container90 {
+  width: 90%;
+  margin: auto;
+}
+
+.container50 {
+  width: 50%;
+  margin: auto;
+}
+
 a {
   text-decoration: none;
 }
 
+p {
+  color: $grey;
+  font-size: .75rem;
+  line-height: 1.7rem;
+}
+
+h3 {
+  text-transform: uppercase;
+  color: black;
+}
+
+h3.white {
+  color: white;
+}
+
+// bottons
 ._btn {
   padding: 8px 20px;
   text-transform: uppercase;
   font-size: .7rem;
 }
 
-._btn:not(._btn.full):hover {
-  color: white;
-}
-
-.white {
+._btn.white {
   border: 2px solid white;
   color: white;
 }
 
-.yellow {
+._btn.yellow {
   border: 2px solid $yellow;
   color: $yellow;
 }
 
-.full {
+._btn.full {
   background-color: $yellow;
+  color: white;
+}
+// /bottons
+
+.line {
+  width: 100px;
+  border: 1px solid $yellow;
+  margin: 20px 0 30px;
 }

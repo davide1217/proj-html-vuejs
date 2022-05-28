@@ -1,6 +1,7 @@
 <template>
   <div>
-    <HeaderComp :menu="menu" />
+    <HeaderComp />
+    <JumboTron />
     <MainComp />
     <FooterComp />
   </div>
@@ -9,6 +10,7 @@
 <script>
 import FooterComp from './components/FooterComp.vue'
 import HeaderComp from './components/HeaderComp.vue'
+import JumboTron from './components/JumboTron.vue'
 import MainComp from './components/MainComp.vue'
 
 
@@ -18,26 +20,11 @@ export default {
     HeaderComp,
     MainComp,
     FooterComp,
+    JumboTron,
   },
   data() {
     return {
-      menu: [
-        {
-          text: 'home',
-        },
-        {
-          text: 'mission',
-        },
-        {
-          text: 'causes',
-        },
-        {
-          text: 'journal',
-        },
-        {
-          text: 'donate',
-        },
-      ]
+      
     }
   }
 }
