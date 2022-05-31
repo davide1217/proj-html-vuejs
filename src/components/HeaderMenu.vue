@@ -1,12 +1,12 @@
 <template>
 <li>
-  <a class="text-uppercase" :class="{'_btn full' : index == menu.length - 1}" :href="`#${index}}`">{{text}}</a>
+  <a class="text-uppercase" :class="{'_btn full' : index == menu.length - 1}" :href="`#${index}`">{{text}}</a>
 </li>
 </template>
 
 <script>
 export default {
-  name: 'MenuComp',
+  name: 'HeaderMenu',
 
   props: {
     text: String,

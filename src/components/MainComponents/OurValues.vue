@@ -1,6 +1,6 @@
 <template>
-  <section class="d-flex align-items-center">
-    <div class="h-75 container90 d-flex flex-column align-items-center">
+  <section>
+    <div class="container90">
       <h3 class="white">our values</h3>
       <div class="line"></div>
       <span>Think Big. Act Bigger.</span>
@@ -46,6 +46,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../assets/styles/_vars';
+@import '../../assets/styles/_mixins';
 
   section {
     height: 70vh;
@@ -59,9 +60,7 @@ export default {
   }
 
   .values > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-column;
     flex-basis: 25%;
     padding: 0 7px;
 

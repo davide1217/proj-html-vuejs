@@ -15,8 +15,8 @@
   margin: auto;
 }
 
-.container50 {
-  width: 50%;
+.container60 {
+  width: 60%;
   margin: auto;
 }
 
@@ -26,7 +26,7 @@ a {
 
 p {
   color: $grey;
-  font-size: .75rem;
+  font-size: .8rem;
   line-height: 1.7rem;
 }
 
@@ -39,11 +39,30 @@ h3.white {
   color: white;
 }
 
+main > section {
+  display: flex;
+  align-items: center;
+}
+
+main section > .container90 {
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 // bottons
+.bottons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 ._btn {
   padding: 8px 20px;
   text-transform: uppercase;
   font-size: .7rem;
+  cursor: pointer;
+  transition: .3s;
 }
 
 ._btn.white {
@@ -51,19 +70,43 @@ h3.white {
   color: white;
 }
 
+._btn.white:hover {
+  border: 2px solid $yellow;
+  color: $yellow;
+}
+
 ._btn.yellow {
   border: 2px solid $yellow;
   color: $yellow;
+}
+
+._btn.yellow:hover {
+  border: 2px solid white;
+  color: white;
+  background-color: $black;
 }
 
 ._btn.full {
   background-color: $yellow;
   color: white;
 }
+
+._btn.full:hover {
+  background-color: $black;
+}
+
+._btn.red {
+  background-color: $red;
+  color: white;
+}
+
+._btn.red:hover {
+  background-color: #408292;
+}
 // /bottons
 
 .line {
-  width: 100px;
+  width: 120px;
   border: 1px solid $yellow;
   margin: 20px 0 30px;
 }
