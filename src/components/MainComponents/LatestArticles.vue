@@ -1,54 +1,60 @@
 <template>
   <section id="3">
     <div class="container60">
-      <div class="container-fluid">
-        <div class="row">
 
-          <div class="col-12 d-flex flex-column align-items-center">
-            <h3>latest articles</h3>
-            <div class="line"></div>
-            <span>Together we make all the difference</span>
-          </div>
+        <div class="col-12 d-flex flex-column align-items-center">
+          <h3>latest articles</h3>
+          <div class="line"></div>
+          <span>Together we make all the difference</span>
+        </div>
 
-          <div id="articles" class="col-12 mt-5">
-            <div class="row h-100">
+        <div id="articles" class="container-fluid">
+          <div class="row h-100">
 
-              <div id="left" class="col-8 col-md-6">
-                <img :src="articles[activeArticleIndex].imageBig" alt="">
-                <div class="p-3">
-                  <h6>{{articles[activeArticleIndex].title}}</h6>
-                  <p>{{articles[activeArticleIndex].description}}</p>
-                </div>
+            <div id="left" class="col-6 col-md-8 col-lg-6">
+
+              <div id="imgBig" class="row w-100">
+                <CardComp :image="articles[activeArticleIndex].imageBig"
+                :title="articles[activeArticleIndex].title" />
               </div>
 
-              <div id="right" class="col-4 col-md-6">
+              <div class="p-3">
+                <h6>{{articles[activeArticleIndex].title}}</h6>
+                <p>{{articles[activeArticleIndex].description}}</p>
+              </div>
+            </div>
 
-                <div v-for="(article, index) in articles" 
-                :key="index"
-                @click="activeArticle(index)">
+            <div id="right" class="col-6 d-flex flex-column align-items-center d-lg-inline-block col-md-4 col-lg-6">
 
-                  <img :src="article.imageLittle" alt="">
+              <div v-for="(article, index) in articles" 
+              :key="index"
+              @click="activeArticle(index)">
 
-                  <div class="w-75 ps-2 d-none d-md-inline-block">
-                    <h6>{{article.title}}</h6>
-                    <p>{{article.description}}</p>
-                  </div>
+                <img :src="`${require('../../assets/images/' + article.imageLittle + '.jpg')}`" :alt="article.title">
 
+                <div class="ps-3 d-none d-lg-inline-block">
+                  <h6>{{article.title}}</h6>
+                  <p>{{article.description}}</p>
                 </div>
+
               </div>
             </div>
           </div>
-
-          <div class="_btn red">view all our articles</div>
-
         </div>
-      </div>
+
+      <div class="_btn red">view all our articles</div>
+
     </div>
   </section>
 </template>
 
 <script>
+import CardComp from '../CardComp.vue';
+
+
 export default {
+  components: { CardComp },
+
   name: 'LatestArticles',
 
   data() {
@@ -59,32 +65,32 @@ export default {
         {
           title: 'Understanding community  complexities',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quidem magni iure quos a. Eius.',
-          imageBig: require('../../assets/images/../../assets/images/photo-1444213007800-cff19e1677ac-600x450.jpg'),
-          imageLittle: require('../../assets/images/../../assets/images/photo-1444213007800-cff19e1677ac-200x150.jpg'),
+          imageBig: 'photo-1444213007800-cff19e1677ac-600x450',
+          imageLittle: 'photo-1444213007800-cff19e1677ac-200x150',
         },
         {
           title: 'The uman story of uniqueness',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quidem magni iure quos a. Eius.',
-          imageBig: require('../../assets/images/photo-1444664597500-035db93e2323-177x142.jpg'),
-          imageLittle: require('../../assets/images/photo-1444664597500-035db93e2323-177x142.jpg'),
+          imageBig: 'photo-1444664597500-035db93e2323-177x142',
+          imageLittle: 'photo-1444664597500-035db93e2323-177x142',
         },
         {
           title: 'Sustainable trade tactics',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quidem magni iure quos a. Eius.',
-          imageBig: require('../../assets/images/photo-1447430617419-95715602278e-177x142.jpg'),
-          imageLittle: require('../../assets/images/photo-1447430617419-95715602278e-177x142.jpg'),
+          imageBig: 'photo-1447430617419-95715602278e-177x142',
+          imageLittle: 'photo-1447430617419-95715602278e-177x142',
         },
         {
           title: 'Farmers making a difference',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quidem magni iure quos a. Eius.',
-          imageBig: require('../../assets/images/photo-1460230525622-630fe3294cd7-177x142.jpg'),
-          imageLittle: require('../../assets/images/photo-1460230525622-630fe3294cd7-177x142.jpg'),
+          imageBig: 'photo-1460230525622-630fe3294cd7-177x142',
+          imageLittle: 'photo-1460230525622-630fe3294cd7-177x142',
         },
         {
           title: 'Meeting remote tribes in Peru',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quidem magni iure quos a. Eius.',
-          imageBig: require('../../assets/images/photo-1460600421604-5e138c208b9c-177x142.jpg'),
-          imageLittle: require('../../assets/images/photo-1460600421604-5e138c208b9c-177x142.jpg'),
+          imageBig: 'photo-1460600421604-5e138c208b9c-177x142',
+          imageLittle: 'photo-1460600421604-5e138c208b9c-177x142',
         },
       ]
     }
@@ -110,23 +116,17 @@ export default {
     color: $grey;
   }
 
-  #articles::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
   #articles {
     height: 55vh;
+    margin-top: 50px;
   }
 
   #left {
-      float: left;
       height: 100%;
       overflow-y: auto;
       padding: 0;
 
-      & > div {
+      & > div:last-of-type {
         border: 1px solid lighten($light-grey, 25%);
         border-bottom: 3px solid lighten($light-grey, 25%);
       }
@@ -143,16 +143,15 @@ export default {
     }
 
     #right {
-      float: right;
       height: 100%;
       overflow-y: auto;
-      cursor: pointer;
-      padding: 0 0 0 20px;
+      padding: 0 0 0 30px;
 
       & > div {
         height: 25%;
-        overflow-y: auto;
-        padding-bottom: 15px;
+        cursor: pointer;
+        
+        padding-bottom: 20px;
         display: flex;
 
         & > div {
@@ -161,8 +160,14 @@ export default {
         }
 
         & img {
-          height: fit-content;
-          width: 120px;
+          max-width: 110px;
+          height: 90px;
+          transition: all .5s;
+        }
+
+        & img:hover {
+          transform: scale(1.1);
+          box-shadow: 0 3px 5px black;
         }
 
 
@@ -182,4 +187,11 @@ export default {
     margin-top: 80px;
   }
   
+  #articles #left > #imgBig > ._col {
+    width: 100%;
+  }
+
+  #imgBig {
+    --bs-gutter-x: 0;
+  }
 </style>

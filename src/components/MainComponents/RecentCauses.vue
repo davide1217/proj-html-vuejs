@@ -3,20 +3,49 @@
     <div class="container90">
       <h3>recent causes</h3>
       <div class="line"></div>
-      <span>We run projects in over 30 countries in 5 continents</span>
-      <div id="images">
-        <img src="../../assets/images/avada-charity-fair-trade-featured-400x300.jpg" alt="">
-        <img src="../../assets/images/avada-charity-shelter-featured-400x300.jpg" alt="">
-        <img src="../../assets/images/avada-charity-farming-featured-400x300.jpg" alt="">
-        <img src="../../assets/images/avada-charity-vaccines-featured-400x300.jpg" alt="">
+      <span class="text-center">We run projects in over 30 countries in 5 continents</span>
+
+      <div class="container-fluid _container">
+        <div id="images" class="row flex-wrap">
+          <card-comp v-for="(image, index) in images" :key="`card-${index}`"
+          :image="image.path" :title="image.title" />
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import CardComp from '../CardComp.vue'
+
 export default {
+
+  components: { CardComp },
+
   name: 'RecentCauses',
+
+  data() {
+    return {
+      images: [
+        {
+          path: 'avada-charity-fair-trade-featured-400x300',
+          title: 'fair trade'
+        },
+        {
+          path: 'avada-charity-shelter-featured-400x300',
+          title: 'shelter'
+        },
+        {
+          path: 'avada-charity-farming-featured-400x300',
+          title: 'farming'
+        },
+        {
+          path: 'avada-charity-vaccines-featured-400x300',
+          title: 'vaccines'
+        },
+      ]
+    }
+  }
 }
 </script>
 
@@ -32,14 +61,16 @@ export default {
   }
 
   #images {
-    display: flex;
     justify-content: center;
-    width: 90%;
-    margin-top: 70px;
+    height: 100%;
+    --bs-gutter-x: 0;
 
-    & img {
-      width: 25%;
-      padding: 0 10px;
+    & > ._col {
+      transform: scale(.9);
     }
+  }
+
+  ._container {
+    margin-top: 70px;
   }
 </style>
