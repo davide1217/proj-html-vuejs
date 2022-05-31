@@ -10,7 +10,7 @@
       </div>
 
       <div>
-        <footer-menu v-for="(icon, index) in icons"
+        <FooterMenu v-for="(icon, index) in icons"
         :key="`icon-${index}`"
         :icon="icon" />
       </div>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import FooterMenu from './FooterMenu'
+import FooterMenu from './ExtraComp/FooterMenu'
 export default {
   components: { FooterMenu },
   name: 'FooterComp',

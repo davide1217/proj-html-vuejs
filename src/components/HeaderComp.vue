@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import HeaderMenu from './HeaderMenu'
+import HeaderMenu from './ExtraComp/HeaderMenu'
 
 
 export default {

@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import CardComp from '../CardComp.vue';
+import CardComp from '../ExtraComp/CardComp.vue';
 
 
 export default {

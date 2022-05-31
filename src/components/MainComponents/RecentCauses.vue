@@ -7,7 +7,7 @@
 
       <div class="container-fluid _container">
         <div id="images" class="row flex-wrap">
-          <card-comp v-for="(image, index) in images" :key="`card-${index}`"
+          <CardComp v-for="(image, index) in images" :key="`card-${index}`"
           :image="image.path" :title="image.title" />
         </div>
       </div>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import CardComp from '../CardComp.vue'
+import CardComp from '../ExtraComp/CardComp.vue'
 
 export default {
 
